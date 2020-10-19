@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: process.env.password,
+    password: "10mYS2QL20codE~!",
     database: "burger_db"
 });
 
@@ -21,4 +21,4 @@ connection.connect(function(err) {
 });
 
 //export to use for ORM
-// module.exports = connection;
+module.exports = connection;
