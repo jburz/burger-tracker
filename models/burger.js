@@ -1,3 +1,13 @@
-const orm = require("../config/orm");
+//require pacakages and files
+const orm = require("../config/orm.js");
 
-orm.selectAll("burgers");
+//define object for burger
+const burger = {
+    all: function (cb) {
+        orm.selectAll("burgers", function(res) {
+            cb(res);
+        });
+    }
+}
+
+module.exports = burger;

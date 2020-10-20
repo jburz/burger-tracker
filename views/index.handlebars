@@ -1,0 +1,23 @@
+<h1>Getcha Burgers!</h1>
+
+<p>Created</p>
+<ul>
+    {{#each burgers}}
+    {{#unless this.devoured}}
+    <li>
+        {{this.burger_name}}
+    </li>
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<p>Consumed</p>
+<ul>
+    {{#each burgers}}
+    {{#if this.devoured}}
+    <li>
+        {{this.burger_name}}
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
