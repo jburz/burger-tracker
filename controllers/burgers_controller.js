@@ -15,9 +15,15 @@ router.get("/", function (req, res) {
 });
 
 //burger post route
-router.post("/api/:id", function (req, res) {
+// router.post("/api/burgers", function (req, res) {
     
-});
+// });
+
+//burger devoured route
+router.put("/api/burgers/:id", function(req, res) {
+    const condition = "id = " + req.params.id;
+    console.log(condition);
+})
 
 module.exports = router;
 
