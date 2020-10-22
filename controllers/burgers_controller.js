@@ -14,5 +14,10 @@ router.get("/", function (req, res) {
     });
 });
 
+//burger post route
+router.post("/api/:id", function (req, res) {
+    
+});
+
 module.exports = router;
 

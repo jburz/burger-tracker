@@ -6,6 +6,7 @@
     {{#unless this.devoured}}
     <li>
         {{this.burger_name}}
+        <button class='devourButton' data-id="{{this.id}}">Devour</button>
     </li>
     {{/unless}}
     {{/each}}
@@ -21,3 +22,4 @@
     {{/if}}
     {{/each}}
 </ul>
+
