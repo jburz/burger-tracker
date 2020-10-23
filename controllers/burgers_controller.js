@@ -9,21 +9,30 @@ router.get("/", function (req, res) {
         const hbsObject = {
             burgers: data
         };
-        console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
 
 //burger post route
-// router.post("/api/burgers", function (req, res) {
-    
-// });
+router.post("/api/burgers/", function (req, res) {
+    console.log(req.body.data);
+    burger.add(req.body.data, function (result) {
+        res.json({ id: result.insertId })
+    });
+
+});
 
 //burger devoured route
-router.put("/api/burgers/:id", function(req, res) {
-    const condition = "id = " + req.params.id;
-    console.log(condition);
-})
+router.put("/api/burgers/:id", function (req, res) {
+    burger.update(req.body.devoured, req.params.id, function (result) {
+        if (result.changedRows == 0) {
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
 
+//Export routes for server.js
 module.exports = router;
 

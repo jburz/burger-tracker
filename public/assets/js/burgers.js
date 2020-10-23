@@ -1,16 +1,37 @@
+//click listener for add burger button
+$("#addBurger").on("click", function (event) {
+    event.preventDefault();
+    const newBurger = $("#addInput").val().trim();
+    const newBurgerObj = {
+        data: newBurger
+    }
+    console.log("new burger: " + newBurgerObj);
+
+
+     $.ajax("/api/burgers/", {
+         method: "POST",
+         data: newBurgerObj
+     }).then(function(res) {
+         console.log('Burger added');
+         location.reload();
+     });
+});
+
 //click listener for devour button
-$(".devourButton").on("click", function() {
+$(".devourButton").on("click", function (event) {
+    event.preventDefault();
     const id = $(this).data("id")
-    console.log(id);
 
     const devouredObj = {
         devoured: 1
     }
 
     $.ajax("/api/burgers/" + id, {
-        type: "PUT",
+        method: "PUT",
         data: devouredObj
-    }).then(function() {
-        console.log("devoured changed to " + devoured);
+    }).then(function (res) {
+        console.log("devoured changed");
+        location.reload();
     });
 });
+

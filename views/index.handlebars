@@ -1,12 +1,22 @@
 <h1>Getcha Burgers!</h1>
 
+<form>
+  <div class="form-group">
+    <label for="New Burger">New Burger</label>
+    <input type="text" class="form-control" id="addInput">
+    <small id="addHelp" class="form-text text-muted">Whatever your heart desires!!</small>
+  </div>
+  
+  <button type="submit" class="btn btn-primary" id="addBurger">Add Burger</button>
+</form>
+
 <p>Created</p>
 <ul>
     {{#each burgers}}
     {{#unless this.devoured}}
     <li>
         {{this.burger_name}}
-        <button class='devourButton' data-id="{{this.id}}">Devour</button>
+        <button type="submit" class='devourButton' data-id="{{this.id}}">Devour</button>
     </li>
     {{/unless}}
     {{/each}}
