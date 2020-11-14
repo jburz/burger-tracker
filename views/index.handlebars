@@ -1,35 +1,67 @@
-<h1>Getcha Burgers!</h1>
-
-<form>
-  <div class="form-group">
-    <label for="New Burger">New Burger</label>
-    <input type="text" class="form-control" id="addInput">
-    <small id="addHelp" class="form-text text-muted">Whatever your heart desires!!</small>
+<div class="container bg-warning">
+  <div class="jumbotron jumbotron-fluid bg-warning">
+    <div class="container">
+      <h1 class="display-4">Getcha Burgers!</h1>
+      <img src="./assets/img/burger.jpg" alt="burger">
+    </div>
   </div>
-  
-  <button type="submit" class="btn btn-primary" id="addBurger">Add Burger</button>
-</form>
 
-<p>Created</p>
-<ul>
-    {{#each burgers}}
-    {{#unless this.devoured}}
-    <li>
-        {{this.burger_name}}
-        <button type="submit" class='devourButton' data-id="{{this.id}}">Devour</button>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
 
-<p>Consumed</p>
-<ul>
-    {{#each burgers}}
-    {{#if this.devoured}}
-    <li>
-        {{this.burger_name}}
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
+  <div class="row">
+    <div class="col">
 
+      <form class="form-inline">
+        <div class="form-group mb-5 mt-4">
+          <label for="New Burger">Add a New Burger to the menu</label>
+          <div class="form-group mx-sm-3">
+            <input type="text" class="form-control" id="addInput">
+          </div>
+          <div class="form-group mx-sm-3">
+            <button type="submit" class="btn btn-dark" id="addBurger">Add Burger</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <div class="card">
+
+        <h3>Created</h3>
+        <ul class="list-group">
+          {{#each burgers}}
+          {{#unless this.devoured}}
+          <li class="list-group-item">
+            <div class="row d-flex justify-content-between">
+              {{this.burger_name}}
+              <button type="submit" class='devourButton btn bg-dark' data-id="{{this.id}}">
+                <i class="fas fa-hamburger text-warning"></i>
+              </button>
+
+            </div>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-sm">
+      <div class="card">
+
+        <h3>Consumed</h3>
+        <ul class="list-group">
+          {{#each burgers}}
+          {{#if this.devoured}}
+          <li class="list-group-item">
+            {{this.burger_name}}
+          </li>
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
