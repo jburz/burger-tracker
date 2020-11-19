@@ -21,6 +21,6 @@ app.set("view engine", "handlebars");
 app.use(routes);
 
 //start server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log("Server listinging on: http://localhost:" + PORT);
 });
