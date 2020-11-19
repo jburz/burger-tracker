@@ -13,6 +13,10 @@ Add burgers to a list that you would like to eat!  Click on the hamburger icon t
   * [Questions](#Questions)
 <br>
 
+## Screenshot
+![getcha-burgers!](./public/assets/img/getchaBurgers.png)
+<br>
+
 ## Installation
 Clone the repository from github and run npm install in the root directory.
 <br>
