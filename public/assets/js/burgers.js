@@ -5,23 +5,18 @@ $("#addBurger").on("click", function (event) {
     const newBurgerObj = {
         data: newBurger
     }
-    console.log("new burger: " + newBurgerObj);
-
-
-     $.ajax("/api/burgers/", {
-         method: "POST",
-         data: newBurgerObj
-     }).then(function(res) {
-         console.log('Burger added');
-         location.reload();
-     });
+    $.ajax("/api/burgers/", {
+        method: "POST",
+        data: newBurgerObj
+    }).then(function (res) {
+        location.reload();
+    });
 });
 
 //click listener for devour button
 $(".devourButton").on("click", function (event) {
     event.preventDefault();
     const id = $(this).data("id")
-
     const devouredObj = {
         devoured: 1
     }
@@ -30,7 +25,6 @@ $(".devourButton").on("click", function (event) {
         method: "PUT",
         data: devouredObj
     }).then(function (res) {
-        console.log("devoured changed");
         location.reload();
     });
 });
