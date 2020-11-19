@@ -1,18 +1,16 @@
 <div class="container">
-  <div class="jumbotron jumbotron-fluid bg-warning">
-    <div class="row">
-      <h1 class="display-4 mx-auto">Getcha Burgers!</h1>
-    </div>
-    <div class="row">
-      <img class="img-fluid rounded-circle shadow-lg mx-auto" src="./assets/img/burger.jpg" alt="burger">
-    </div>
-
+  <div class="row">
+    <h1 class="display-1 mx-auto pb-3">Getcha Burgers!</h1>
+  </div>
+  <div class="row">
+    <img class="img-fluid rounded-circle shadow-lg mx-auto" src="./assets/img/burger.jpg" alt="burger">
   </div>
 
 
-  <div class="row">
-    <div class="col">
 
+
+  <div class="row pt-5">
+    <div class="col">
       <form class="form-inline">
         <div class="form-group mb-5 mt-4">
           <label for="New Burger">Add a New Burger to the menu</label>
@@ -31,7 +29,7 @@
     <div class="col-sm">
       <div class="card">
 
-        <h3>Created</h3>
+        <h3 class="mx-auto">Created</h3>
         <ul class="list-group">
           {{#each burgers}}
           {{#unless this.devoured}}
@@ -41,7 +39,6 @@
               <button type="submit" class='devourButton btn bg-dark' data-id="{{this.id}}">
                 <i class="fas fa-hamburger text-warning"></i>
               </button>
-
             </div>
           </li>
           {{/unless}}
@@ -52,8 +49,7 @@
 
     <div class="col-sm">
       <div class="card">
-
-        <h3>Consumed</h3>
+        <h3 class="mx-auto">Consumed</h3>
         <ul class="list-group">
           {{#each burgers}}
           {{#if this.devoured}}
